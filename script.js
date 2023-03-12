@@ -33,7 +33,7 @@ function addC() {
 
     if (numRows * numCols == 0) {                
         var table = document.getElementById("grid");    
-        
+
         let row = document.createElement('tr');        
         let cell = document.createElement('td');
 	    row.appendChild(cell);
@@ -55,7 +55,15 @@ function addC() {
 }
 
 // Remove a row
-function removeR() {
+function removeR() {    
+    document.getElementById("grid").deleteRow(numRows-1);
+    if (numRows == 1) {        
+        numCols = 0;
+    }
+    if (numRows > 0) {
+        numRows--;
+    }
+
     alert("Clicked Remove Row"); // Replace this line with your code.
 }
 
