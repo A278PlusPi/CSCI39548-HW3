@@ -4,17 +4,66 @@ let numCols = 0;
 let colorSelected; 
 
 // Add a row
-function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+function addR() {    
+    var table = document.getElementById("grid");
+
+    let row = document.createElement('tr');
+    if (numRows * numCols == 0) {
+        let cell = document.createElement('td');
+	    row.appendChild(cell);
+        numRows++;
+        numCols++;
+    }
+    else {   
+        for (let i = 0; i < numCols; i++) {
+            let cell = document.createElement('td');
+            row.appendChild(cell);
+        }
+
+        numRows++;
+    }
+
+    table.appendChild(row);
+    // alert("Clicked Add Row"); // Replace this line with your code.
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    let rows = document.querySelectorAll('#grid tr');
+
+    if (numRows * numCols == 0) {                
+        var table = document.getElementById("grid");    
+
+        let row = document.createElement('tr');        
+        let cell = document.createElement('td');
+	    row.appendChild(cell);
+        numRows++;
+        numCols++;        
+        table.appendChild(row);
+    }
+    else { 
+        for (let row of rows) {            
+            let cell_1 = document.createElement('td');
+            row.appendChild(cell_1);
+        }
+
+        numCols++;
+    }
+
+
+    // alert("Clicked Add Col"); // Replace this line with your code.
 }
 
 // Remove a row
-function removeR() {
+function removeR() {    
+    document.getElementById("grid").deleteRow(numRows-1);
+    if (numRows == 1) {        
+        numCols = 0;
+    }
+    if (numRows > 0) {
+        numRows--;
+    }
+
     alert("Clicked Remove Row"); // Replace this line with your code.
 }
 
