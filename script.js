@@ -107,6 +107,18 @@ function selectColor(){
     console.log(colorSelected);
 }
 
+//color a single cell on click
+// Add event listener to the parent element (table)
+document.querySelector('#grid').addEventListener('click', function(event) {
+    // Check if the clicked element is a cell (td)
+    if (event.target.tagName === 'TD') {
+      // Color the clicked cell
+      colorSelected = document.getElementById("selectedColorId").value;
+      event.target.style.backgroundColor = colorSelected;
+    }
+  });
+  
+
 // Fill all uncolored cells
 function fillU(){
     alert("Clicked Fill All Uncolored"); // Replace this line with your code.
