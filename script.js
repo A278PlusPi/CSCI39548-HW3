@@ -119,14 +119,21 @@ function fillU() {
 
 // Fill all cells
 function fillAll() {
-  alert("Clicked Fill All"); // Replace this line with your code.
+  let colorOptionSelected = document.getElementById("selectedColorId");
+  colorSelected =
+    colorOptionSelected.options[
+      colorOptionSelected.selectedIndex
+    ].text.toLowerCase();
+  let table = document.getElementById("grid").getElementsByTagName("td");
+  for (let i = 0; i < table.length; i++) {
+    table[i].style.background = `${colorSelected}`;
+  }
 }
 
 // Clear all cells
 function clearAll() {
-  let grid = document.getElementById("grid").getElementsByTagName("td");
+  let table = document.getElementById("grid").getElementsByTagName("td");
   for (let i = 0; i < table.length; i++) {
-    grid[i].style.background = "white";
-    console.log(grid[i].style.backgroundColor);
+    table[i].style.background = "white";
   }
 }
