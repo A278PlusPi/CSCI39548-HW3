@@ -114,7 +114,18 @@ document.querySelector("#grid").addEventListener("click", function (event) {
 
 // Fill all uncolored cells
 function fillU() {
-  alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+  let colorOptionSelected = document.getElementById("selectedColorId");
+  colorSelected =
+    colorOptionSelected.options[
+      colorOptionSelected.selectedIndex
+    ].text.toLowerCase();
+  let table = document.getElementById("grid").getElementsByTagName("td");
+  for (let i = 0; i < table.length; i++) {
+    //if any white cell is found -> color
+    if (table[i].style.backgroundColor == "white") {
+      table[i].style.background = `${colorSelected}`;
+    }
+  }
 }
 
 // Fill all cells
