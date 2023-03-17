@@ -61,7 +61,7 @@ function removeR() {
     numRows--;
   }
 
-  alert("Clicked Remove Row"); // Replace this line with your code.
+  // alert("Clicked Remove Row"); // Replace this line with your code.
 }
 
 // Remove a column
@@ -146,6 +146,6 @@ function fillAll() {
 function clearAll() {
   let table = document.getElementById("grid").getElementsByTagName("td");
   for (let i = 0; i < table.length; i++) {
-    table[i].style.background = "white";
+    table[i].style.background = "";
   }
 }
