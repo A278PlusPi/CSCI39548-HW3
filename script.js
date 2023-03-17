@@ -121,9 +121,10 @@ function fillU() {
     ].text.toLowerCase();
   let table = document.getElementById("grid").getElementsByTagName("td");
   for (let i = 0; i < table.length; i++) {
-    //if any white cell is found -> color
-    if (table[i].style.backgroundColor == "white") {
-      table[i].style.background = `${colorSelected}`;
+    //if find any cell that is not colored -> color it with chosen color
+    if (table[i].style.backgroundColor == "") {
+      table[i].style.backgroundColor = `${colorSelected}`;
+      console.log("the cell number: ", table[i]);
     }
   }
 }
