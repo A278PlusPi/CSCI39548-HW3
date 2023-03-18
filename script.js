@@ -3,6 +3,26 @@ let numRows = 0;
 let numCols = 0;
 let colorSelected;
 
+// Indicate rows and columns on screen
+function getDimensions() {
+  var cells = numRows * numCols;
+  if (numRows == 0 && numCols == 0) {
+    alert("There are no rows and no columns in your grid, so there are no cells!");
+  }
+  else if (numRows == 1 && numCols == 1) {
+    alert("There is " + numCols + " column and " + numRows + " row in your grid.\nTotal: " + cells + " cell.");
+  }
+  else if (numRows == 1) {
+    alert("There are " + numCols + " columns and " + numRows + " row in your grid.\nTotal: " + cells + " cells.");
+  }
+  else if (numCols == 1) {
+    alert("There are " + numCols + " column and " + numRows + " rows in your grid.\nTotal: " + cells + " cells.");
+  }
+  else {
+    alert("There are " + numCols + " columns and " + numRows + " rows in your grid.\nTotal: " + cells + " cells.");
+  }
+}
+
 // Add a row
 function addR() {
   var table = document.getElementById("grid");
